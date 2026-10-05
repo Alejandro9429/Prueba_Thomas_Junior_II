@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_spotify_genre_user,spotify.genre user,model_spotify_genre,base.group_user,1,1,1,0
+access_spotify_track_user,spotify.track user,model_spotify_track,base.group_user,1,1,1,1

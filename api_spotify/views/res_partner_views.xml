@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_partner_form_spotify" model="ir.ui.view">
+        <field name="name">res.partner.form.spotify</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Spotify" name="spotify">
+                    <group>
+                        <field name="spotify_genre_ids"
+                               widget="many2many_tags"
+                               placeholder="e.g. rock, salsa, jazz..."/>
+                    </group>
+                    <field name="spotify_track_ids" readonly="1">
+                        <tree>
+                            <field name="genre_id"/>
+                            <field name="name"/>
+                            <field name="artist"/>
+                            <field name="album"/>
+                            <field name="url" widget="url"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

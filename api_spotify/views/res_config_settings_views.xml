@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_spotify" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.spotify</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('settings')]" position="inside">
+                <div class="app_settings_block"
+                     data-string="Spotify"
+                     string="Spotify"
+                     data-key="spotify_partner">
+                    <h2>Spotify</h2>
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_right_pane">
+                                <label for="spotify_client_id"/>
+                                <div class="text-muted">
+                                    Client ID of your app in the Spotify Developer Dashboard.
+                                </div>
+                                <field name="spotify_client_id"/>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_right_pane">
+                                <label for="spotify_client_secret"/>
+                                <div class="text-muted">
+                                    Client Secret of the same app. Keep it private.
+                                </div>
+                                <field name="spotify_client_secret" password="True"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
