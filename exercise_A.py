@@ -17,9 +17,17 @@ def contar_palabras(n, conteo, data):
     return conteo
 
     
-def create_output(conteo):
-    with open("salida_A.txt", "w", encoding="utf-8") as salida:
-        salida.write(str(len(conteo)) + "\n")
-        salida.write(" ".join(str(v) for v in conteo.values()))
+def build_output_text(conteo):
+    first_line = str(len(conteo))
+    second_line = " ".join(str(v) for v in conteo.values())
+    return first_line + "\n" + second_line
 
-open_file()
+
+def create_output(conteo):
+    text = build_output_text(conteo)
+    with open("salida_A.txt", "w", encoding="utf-8") as salida:
+        salida.write(text)
+    print(text)
+
+n, conteo, data = open_file()
+print(conteo)
